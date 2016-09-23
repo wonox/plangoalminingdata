@@ -94,18 +94,8 @@ hash.store('1368750_02','自然科学研究機構')
 hash.store('1368750_03','高エネルギー加速器研究機構')
 hash.store('1368750_04','情報・システム研究機構')
 
-
-
 Dir.glob("*") do |filename|
   newname = File.basename(filename, ".txt")
 
   FileUtils.mv(filename, hash[newname] + '.txt') unless hash[newname].nil?
-
-  # newname2 = hash[newname]
-  # newname3 = hash[newname] ? hash[newname] : newname  # newname = filename.gsub(/^(.+)\./, '\1')
-  # newname2 = filename.match(/^(.+)\./)[0]
-  # newname = filename
-  # p newname2
-  # p newname2
-  # FileUtils.mv(filename, newname)
 end
